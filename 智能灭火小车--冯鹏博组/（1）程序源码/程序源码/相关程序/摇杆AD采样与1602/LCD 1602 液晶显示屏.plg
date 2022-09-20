@@ -1,0 +1,16 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\Admin\Desktop\≥Ã–Ú‘¥¬Î\œ‡πÿ≥Ã–Ú\“°∏ÀAD≤…—˘”Î1602\LCD 1602 “∫æßœ‘ æ∆¡.uvproj
+Project File Date:  01/23/2016
+
+<h2>Output:</h2>
+compiling LCD 1602 “∫æßœ‘ æ∆¡.c...
+LCD 1602 “∫æßœ‘ æ∆¡.c - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=34.0 xdata=0 code=667
+creating hex file from "LCD 1602 “∫æßœ‘ æ∆¡"...
+"LCD 1602 “∫æßœ‘ æ∆¡" - 0 Error(s), 0 Warning(s).

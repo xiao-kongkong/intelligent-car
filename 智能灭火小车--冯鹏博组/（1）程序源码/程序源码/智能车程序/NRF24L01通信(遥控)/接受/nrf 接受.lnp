@@ -1,0 +1,7 @@
+"nrf 接受.obj",
+"car.obj",
+"duoji.obj",
+"shengbo.obj",
+"zhuan.obj" 
+TO "nrf 接受" 
+RAMSIZE(256) 

@@ -1,0 +1,237 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        04/12/2016  16:57:28  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+F:\单片机\清翔电子 QX-MCS51资料盘\5.程序编译软件\C51\BIN\BL51.EXE 001.obj TO 001 RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  001.obj (001)
+  F:\单片机\清翔电子 QX-MCS51资料盘\5.程序编译软件\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  001 (001)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     004DH     UNIT         ?PR?TING?001
+            CODE    0050H     003DH     UNIT         ?PR?MAIN?001
+            CODE    008DH     002CH     UNIT         ?PR?_DELAYMS?001
+            CODE    00B9H     001DH     UNIT         ?PR?_PWM?001
+            CODE    00D6H     001DH     UNIT         ?PR?YOUYOU?001
+            CODE    00F3H     0015H     UNIT         ?PR?ZUOZUO?001
+            CODE    0108H     000EH     UNIT         ?PR?QIAN?001
+            CODE    0116H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   001 (001)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?001
+
+?PR?MAIN?001
+  +--> ?PR?TING?001
+  +--> ?PR?QIAN?001
+  +--> ?PR?ZUOZUO?001
+  +--> ?PR?YOUYOU?001
+
+?PR?TING?001
+  +--> ?PR?_DELAYMS?001
+  +--> ?PR?_PWM?001
+
+?PR?QIAN?001
+  +--> ?PR?_DELAYMS?001
+  +--> ?PR?_PWM?001
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      04/12/2016  16:57:28  PAGE 2
+
+
+?PR?ZUOZUO?001
+  +--> ?PR?_DELAYMS?001
+  +--> ?PR?_PWM?001
+
+?PR?YOUYOU?001
+  +--> ?PR?_DELAYMS?001
+  +--> ?PR?_PWM?001
+
+
+
+SYMBOL TABLE OF MODULE:  001 (001)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        001
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  D:00F9H         PUBLIC        CH
+  D:00A8H         PUBLIC        IE
+  D:00E9H         PUBLIC        CL
+  D:00FAH         PUBLIC        CCAP0H
+  D:00FBH         PUBLIC        CCAP1H
+  D:00EAH         PUBLIC        CCAP0L
+  B:00D8H.6       PUBLIC        CR
+  D:00EBH         PUBLIC        CCAP1L
+  D:00DAH         PUBLIC        CCAPM0
+  D:00DBH         PUBLIC        CCAPM1
+  D:00B8H         PUBLIC        IP
+  D:00D9H         PUBLIC        CMOD
+  D:00D8H         PUBLIC        CCON
+  C:0050H         PUBLIC        main
+  C:0108H         PUBLIC        qian
+  B:00A0H.3       PUBLIC        bee
+  C:0003H         PUBLIC        ting
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  B:00B0H.5       PUBLIC        flame1
+  B:00B0H.6       PUBLIC        flame2
+  B:00B0H.7       PUBLIC        flame3
+  B:0080H.2       PUBLIC        lif
+  C:00D6H         PUBLIC        youyou
+  C:00F3H         PUBLIC        zuozuo
+  B:0080H.1       PUBLIC        rig
+  C:00B9H         PUBLIC        _pwm
+  B:0080H.4       PUBLIC        lif0
+  C:0099H         PUBLIC        _delayms
+  B:0080H.3       PUBLIC        rig0
+  D:00D0H         PUBLIC        PSW
+  C:0091H         SYMBOL        L?0026
+  C:0095H         SYMBOL        L?0027
+  -------         PROC          L?0025
+  -------         ENDPROC       L?0025
+  C:0091H         SYMBOL        L?0026
+  C:0095H         SYMBOL        L?0027
+BL51 BANKED LINKER/LOCATER V6.22                                                      04/12/2016  16:57:28  PAGE 3
+
+
+  -------         PROC          _DELAYMS
+  D:0006H         SYMBOL        i
+  -------         DO            
+  D:0004H         SYMBOL        j
+  D:0002H         SYMBOL        k
+  -------         ENDDO         
+  C:0099H         LINE#         14
+  C:0099H         LINE#         15
+  C:0099H         LINE#         16
+  C:00A3H         LINE#         17
+  C:00B8H         LINE#         19
+  -------         ENDPROC       _DELAYMS
+  -------         PROC          _PWM
+  D:0007H         SYMBOL        x
+  D:0005H         SYMBOL        y
+  C:00B9H         LINE#         20
+  C:00B9H         LINE#         21
+  C:00B9H         LINE#         22
+  C:00BCH         LINE#         25
+  C:00BEH         LINE#         26
+  C:00C0H         LINE#         27
+  C:00C3H         LINE#         29
+  C:00C7H         LINE#         30
+  C:00CAH         LINE#         32
+  C:00D0H         LINE#         34
+  C:00D3H         LINE#         36
+  C:00D5H         LINE#         37
+  -------         ENDPROC       _PWM
+  -------         PROC          QIAN
+  C:0108H         LINE#         39
+  C:0108H         LINE#         40
+  C:0108H         LINE#         41
+  C:010AH         LINE#         42
+  C:010CH         LINE#         43
+  C:010CH         LINE#         44
+  C:010CH         LINE#         45
+  C:010FH         LINE#         46
+  -------         ENDPROC       QIAN
+  -------         PROC          ZUOZUO
+  C:00F3H         LINE#         48
+  C:00F3H         LINE#         49
+  C:00F3H         LINE#         50
+  C:00F3H         LINE#         51
+  C:00F3H         LINE#         52
+  C:00F3H         LINE#         53
+  C:00F3H         LINE#         54
+  C:00F6H         LINE#         55
+  C:00FDH         LINE#         56
+  C:0107H         LINE#         57
+  -------         ENDPROC       ZUOZUO
+  -------         PROC          YOUYOU
+  C:00D6H         LINE#         58
+  C:00D6H         LINE#         59
+  C:00D6H         LINE#         60
+  C:00D8H         LINE#         61
+  C:00DAH         LINE#         62
+  C:00DCH         LINE#         63
+BL51 BANKED LINKER/LOCATER V6.22                                                      04/12/2016  16:57:28  PAGE 4
+
+
+  C:00DEH         LINE#         64
+  C:00E1H         LINE#         65
+  C:00E8H         LINE#         66
+  C:00F2H         LINE#         67
+  -------         ENDPROC       YOUYOU
+  -------         PROC          TING
+  C:0003H         LINE#         68
+  C:0003H         LINE#         69
+  C:0003H         LINE#         70
+  C:0005H         LINE#         71
+  C:0007H         LINE#         72
+  C:0009H         LINE#         73
+  C:000BH         LINE#         74
+  C:0012H         LINE#         75
+  C:0014H         LINE#         76
+  C:0016H         LINE#         77
+  C:0018H         LINE#         78
+  C:001AH         LINE#         79
+  C:001DH         LINE#         80
+  C:0024H         LINE#         81
+  C:002BH         LINE#         82
+  C:002BH         LINE#         83
+  C:002BH         LINE#         84
+  C:002BH         LINE#         85
+  C:002BH         LINE#         86
+  C:002EH         LINE#         87
+  C:0035H         LINE#         88
+  C:003CH         LINE#         90
+  C:003EH         LINE#         91
+  C:0040H         LINE#         92
+  C:0042H         LINE#         93
+  C:0044H         LINE#         94
+  C:0046H         LINE#         95
+  C:004DH         LINE#         96
+  C:004FH         LINE#         98
+  -------         ENDPROC       TING
+  -------         PROC          MAIN
+  C:0050H         LINE#         101
+  C:0050H         LINE#         102
+  C:0050H         LINE#         103
+  C:0052H         LINE#         104
+  C:0052H         LINE#         105
+  C:0052H         LINE#         106
+  C:005EH         LINE#         107
+  C:0067H         LINE#         108
+  C:0073H         LINE#         109
+  C:007FH         LINE#         110
+  C:008BH         LINE#         113
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        001
+
+Program Size: data=9.0 xdata=0 code=290
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

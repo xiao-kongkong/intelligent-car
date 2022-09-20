@@ -1,0 +1,229 @@
+C51 COMPILER V9.00   ZHUAN                                                                 04/13/2016 16:36:01 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE ZHUAN
+OBJECT MODULE PLACED IN zhuan.OBJ
+COMPILER INVOKED BY: F:\单片机\清翔电子 QX-MCS51资料盘\5.程序编译软件\C51\BIN\C51.EXE zhuan.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <stc12c5a.h>
+   2          #include <intrins.h>
+   3          #include <zhuan.h>
+   4          #include <shengbo.h>
+   5          #include"car.h" 
+   6          
+   7          #define uchar unsigned char
+   8          #define uint unsigned int
+   9          
+  10                   unsigned int  time;
+  11                   unsigned int  timer;
+  12                   unsigned char posit;
+  13                   unsigned int S1,S2,S3;
+  14                   unsigned char o;
+  15                   unsigned char n1,n2;
+  16          //       unsigned int num1;
+  17          
+  18          extern void pwm (uchar x, uchar y)                                //越小越快  PCA模拟PWM
+  19          {
+  20   1              CCON = 0;                       //Initial PCA control register
+  21   1                                         
+  22   1                                         
+  23   1          CL = 0;                         //Reset PCA base timer
+  24   1          CH = 0;
+  25   1          CMOD = 0x02;                    //Set PCA timer clock source as Fosc/2
+  26   1                                          //Disable PCA timer overflow interrupt
+  27   1          CCAP0H = CCAP0L = x;         //PWM0 port output 50% duty cycle square wave
+  28   1          CCAPM0 = 0x42;                  //PCA module-0 work in 8-bit PWM mode and no PCA interrupt
+  29   1      
+  30   1          CCAP1H = CCAP1L = y;         //PWM1 port output 0% duty cycle square wave
+  31   1      //    PCA_PWM1 = 0x03;
+  32   1          CCAPM1 = 0x42;                  //PCA module-1 work in 8-bit PWM mode and no PCA interrupt
+  33   1      
+  34   1          CR = 1;                         //PCA timer start run
+  35   1      }
+  36          
+  37          void delayms (uint i)           
+  38                                             
+  39          {       uint j,k;
+  40   1      //      ET1=0;
+  41   1              for (j = 0; j<i; j++)
+  42   1                      for (k = 0; k<120;k++);
+  43   1      //      ET1=1;
+  44   1              
+  45   1      }
+  46          void youzhuan()
+  47          {  
+  48   1              rig=0;
+  49   1              lif=1;
+  50   1              rig0=1;
+  51   1              lif0=0;                 
+  52   1              delayms(1);
+  53   1              
+  54   1              pwm(60,66); 
+  55   1              delayms(4200);
+C51 COMPILER V9.00   ZHUAN                                                                 04/13/2016 16:36:01 PAGE 2   
+
+  56   1                      
+  57   1      
+  58   1      }
+  59          void zuozhuan()
+  60          {
+  61   1      
+  62   1              rig=1;
+  63   1              lif=0;
+  64   1              rig0=0;
+  65   1              lif0=1;                 
+  66   1              delayms(1);
+  67   1              pwm(50,56);
+  68   1              delayms(3300);
+  69   1      }
+  70          void houzhuan()
+  71          {
+  72   1      
+  73   1              rig=1;
+  74   1              lif=0;
+  75   1              rig0=0;
+  76   1              lif0=1;                 
+  77   1              delayms(1);
+  78   1              pwm(50,56);
+  79   1              delayms(6600);
+  80   1      }
+  81          void move ()
+  82          {
+  83   1          rig=0;
+  84   1              lif=1;
+  85   1              rig0=0;
+  86   1              lif0=1;                 
+  87   1              delayms(1);
+  88   1              pwm(70,76);
+  89   1      //      delayms(1);                                        
+  90   1      //      pwm(55,60);
+  91   1      //      if (S1<40) pwm(76,72);
+  92   1      //      if (S1<30) pwm(90,97);
+  93   1              
+  94   1      
+  95   1      } 
+  96          void you()
+  97          {
+  98   1              rig=0;
+  99   1              lif=1;
+ 100   1              rig0=1;
+ 101   1              lif0=0;                 
+ 102   1              delayms(1);
+ 103   1              pwm(50,56);
+ 104   1              delayms(10);
+ 105   1      }
+ 106          void zuo()
+ 107          {
+ 108   1              rig=1;
+ 109   1              lif=0;
+ 110   1              rig0=0;
+ 111   1              lif0=1;                 
+ 112   1              delayms(1);
+ 113   1              pwm(50,56);
+ 114   1              delayms(10);
+ 115   1      }
+ 116          void qian()
+ 117          {
+C51 COMPILER V9.00   ZHUAN                                                                 04/13/2016 16:36:01 PAGE 3   
+
+ 118   1              rig=0;
+ 119   1              lif=1;
+ 120   1              rig0=0;
+ 121   1              lif0=1;
+ 122   1              delayms(1);
+ 123   1              pwm(98,98);
+ 124   1      }
+ 125          void xiaoqian()
+ 126          {
+ 127   1              rig=0;
+ 128   1              lif=1;
+ 129   1              rig0=0;
+ 130   1              lif0=1;
+ 131   1              delayms(1);
+ 132   1              pwm(98,98);
+ 133   1              delayms(150);
+ 134   1      }
+ 135          void zuozuo()
+ 136          {
+ 137   1              rig=1;
+ 138   1              lif=0;
+ 139   1              rig0=0;
+ 140   1              lif0=1;
+ 141   1              delayms(1);
+ 142   1              n1++;
+ 143   1              if(n1 >= 2) n1 = 2;
+ 144   1              pwm(75,75);
+ 145   1              if(flame1==1) pwm (87,87);
+ 146   1      }
+ 147          void youyou()
+ 148          {
+ 149   1              rig=0;
+ 150   1              lif=1;
+ 151   1              rig0=1;
+ 152   1              lif0=0;
+ 153   1              delayms(1);
+ 154   1              n2++;
+ 155   1              if(n2 >= 2) n2 = 2;
+ 156   1              pwm(75,75);
+ 157   1              if(flame3==1) pwm (87,87);
+ 158   1      }
+ 159          void ting()
+ 160          {
+ 161   1              rig=1;            
+ 162   1              lif=1;
+ 163   1              rig0=1;
+ 164   1              lif0=1;           //ting
+ 165   1              delayms(5000);
+ 166   1              rig=1;
+ 167   1              lif=0;
+ 168   1              rig0=1;          
+ 169   1              lif0=0;
+ 170   1              delayms(1);      //houtui
+ 171   1              pwm(98,98);
+ 172   1              delayms(4500);
+ 173   1              rig=1;
+ 174   1              lif=0;
+ 175   1              rig0=0;
+ 176   1              lif0=1;                 
+ 177   1              delayms(1);        //houzhuan
+ 178   1              pwm(50,56);
+ 179   1              delayms(7050);
+C51 COMPILER V9.00   ZHUAN                                                                 04/13/2016 16:36:01 PAGE 4   
+
+ 180   1      
+ 181   1              rig=1;             //ting
+ 182   1              lif=1;
+ 183   1              rig0=1;
+ 184   1              lif0=1;
+ 185   1              feng = 1;
+ 186   1              delayms(10000);
+ 187   1              feng = 0;
+ 188   1              delayms(2000);
+ 189   1      
+ 190   1              rig=1;
+ 191   1              lif=0;
+ 192   1              rig0=0;
+ 193   1              lif0=1;                 
+ 194   1              delayms(1);        //houzhuan
+ 195   1              pwm(50,56);
+ 196   1              delayms(6500);
+ 197   1      
+ 198   1              o=1;
+ 199   1      
+ 200   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    372    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     14    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

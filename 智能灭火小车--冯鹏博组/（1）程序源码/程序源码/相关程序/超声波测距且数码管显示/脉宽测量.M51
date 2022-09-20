@@ -1,0 +1,257 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        02/08/2016  19:59:41  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+F:\单片机\清翔电子 QX-MCS51资料盘\5.程序编译软件\C51\BIN\BL51.EXE 脉宽测量.obj TO 脉宽测量
+
+
+MEMORY MODEL: SMALL WITH FLOATING POINT ARITHMETIC
+
+
+INPUT MODULES INCLUDED:
+  脉宽测量.obj (_隹聿_量)
+  F:\单片机\清翔电子 QX-MCS51资料盘\5.程序编译软件\C51\LIB\C51FPS.LIB (?C?FPMUL)
+  F:\单片机\清翔电子 QX-MCS51资料盘\5.程序编译软件\C51\LIB\C51FPS.LIB (?C?FPDIV)
+  F:\单片机\清翔电子 QX-MCS51资料盘\5.程序编译软件\C51\LIB\C51FPS.LIB (?C?FCAST)
+  F:\单片机\清翔电子 QX-MCS51资料盘\5.程序编译软件\C51\LIB\C51FPS.LIB (?C?CASTF)
+  F:\单片机\清翔电子 QX-MCS51资料盘\5.程序编译软件\C51\LIB\C51FPS.LIB (?C?FPGETOPN)
+  F:\单片机\清翔电子 QX-MCS51资料盘\5.程序编译软件\C51\LIB\C51S.LIB (?C_STARTUP)
+  F:\单片机\清翔电子 QX-MCS51资料盘\5.程序编译软件\C51\LIB\C51S.LIB (?C?ULDIV)
+  F:\单片机\清翔电子 QX-MCS51资料盘\5.程序编译软件\C51\LIB\C51S.LIB (?C?LNEG)
+  F:\单片机\清翔电子 QX-MCS51资料盘\5.程序编译软件\C51\LIB\C51S.LIB (?C?ULCMP)
+  F:\单片机\清翔电子 QX-MCS51资料盘\5.程序编译软件\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  脉宽测量 (_隹聿_量)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+                    0008H     0018H                  *** GAP ***
+            BIT     0020H.0   0000H.1   UNIT         ?BI?_隹聿_量
+                    0020H.1   0000H.7                *** GAP ***
+            DATA    0021H     0020H     UNIT         ?DT?_隹聿_量
+            IDATA   0041H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0003H     UNIT         ?PR?ZD0?_隹聿_量
+                    0006H     0005H                  *** GAP ***
+            CODE    000BH     0003H     ABSOLUTE     
+                    000EH     000DH                  *** GAP ***
+            CODE    001BH     0003H     ABSOLUTE     
+            CODE    001EH     0352H     UNIT         ?C?LIB_CODE
+            CODE    0370H     00F4H     UNIT         ?PR?CONUT?_隹聿_量
+            CODE    0464H     008CH     UNIT         ?C_C51STARTUP
+            CODE    04F0H     0049H     UNIT         ?PR?ZD3?_隹聿_量
+            CODE    0539H     003DH     UNIT         ?PR?DISPLAY?_隹聿_量
+            CODE    0576H     0031H     UNIT         ?C_INITSEG
+            CODE    05A7H     0025H     UNIT         ?PR?MAIN?_隹聿_量
+
+
+
+OVERLAY MAP OF MODULE:   脉宽测量 (_隹聿_量)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/08/2016  19:59:41  PAGE 2
+
+
+?PR?ZD3?_隹聿_量
+  +--> ?PR?DISPLAY?_隹聿_量
+
+*** NEW ROOT ***************************************************
+
+?C_C51STARTUP
+  +--> ?PR?MAIN?_隹聿_量
+  +--> ?C_INITSEG
+
+?PR?MAIN?_隹聿_量
+  +--> ?PR?CONUT?_隹聿_量
+
+
+
+SYMBOL TABLE OF MODULE:  脉宽测量 (_隹聿_量)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        _隹聿_量
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:00A0H         PUBLIC        P2
+  B:00A8H.7       PUBLIC        EA
+  C:0370H         PUBLIC        Conut
+  C:0003H         PUBLIC        zd0
+  D:0021H         PUBLIC        positon
+  C:04F0H         PUBLIC        zd3
+  B:0090H.1       PUBLIC        P1_1
+  B:0090H.2       PUBLIC        P1_2
+  B:0020H.0       PUBLIC        flag
+  D:0024H         PUBLIC        timer
+  C:05A7H         PUBLIC        main
+  D:0026H         PUBLIC        time
+  D:0028H         PUBLIC        posit
+  D:0089H         PUBLIC        TMOD
+  B:00A8H.1       PUBLIC        ET0
+  B:00A8H.3       PUBLIC        ET1
+  D:008CH         PUBLIC        TH0
+  D:008DH         PUBLIC        TH1
+  D:008AH         PUBLIC        TL0
+  D:008BH         PUBLIC        TL1
+  D:0029H         PUBLIC        S
+  B:0088H.4       PUBLIC        TR0
+  B:0088H.6       PUBLIC        TR1
+  B:00A0H.6       PUBLIC        du
+  C:0539H         PUBLIC        Display
+  B:00A0H.7       PUBLIC        we
+  D:002DH         PUBLIC        discode
+  D:003DH         PUBLIC        disbuff
+  -------         PROC          DISPLAY
+  C:0539H         LINE#         24
+  C:0539H         LINE#         25
+  C:0539H         LINE#         26
+  C:053DH         LINE#         27
+  C:053FH         LINE#         28
+  C:054BH         LINE#         29
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/08/2016  19:59:41  PAGE 3
+
+
+  C:054DH         LINE#         31
+  C:054DH         LINE#         32
+  C:054FH         LINE#         33
+  C:055BH         LINE#         34
+  C:055DH         LINE#         36
+  C:055FH         LINE#         37
+  C:0567H         LINE#         38
+  C:0569H         LINE#         40
+  C:0572H         LINE#         41
+  C:0575H         LINE#         42
+  -------         ENDPROC       DISPLAY
+  -------         PROC          CONUT
+  C:0370H         LINE#         44
+  C:0370H         LINE#         45
+  C:0370H         LINE#         46
+  C:0380H         LINE#         47
+  C:0383H         LINE#         48
+  C:0385H         LINE#         50
+  C:03ACH         LINE#         51
+  C:03C4H         LINE#         52
+  C:03C4H         LINE#         53
+  C:03C6H         LINE#         54
+  C:03C9H         LINE#         55
+  C:03CCH         LINE#         56
+  C:03CFH         LINE#         57
+  C:03D0H         LINE#         59
+  C:03D0H         LINE#         60
+  C:03F5H         LINE#         61
+  C:042BH         LINE#         62
+  C:0463H         LINE#         63
+  C:0463H         LINE#         64
+  -------         ENDPROC       CONUT
+  -------         PROC          ZD0
+  C:0003H         LINE#         66
+  C:0003H         LINE#         68
+  C:0005H         LINE#         69
+  -------         ENDPROC       ZD0
+  -------         PROC          ZD3
+  C:04F0H         LINE#         71
+  C:04F9H         LINE#         73
+  C:04FCH         LINE#         74
+  C:04FFH         LINE#         75
+  C:0502H         LINE#         76
+  C:050AH         LINE#         77
+  C:0513H         LINE#         78
+  C:0513H         LINE#         79
+  C:0519H         LINE#         80
+  C:051BH         LINE#         81
+  C:051CH         LINE#         82
+  C:051DH         LINE#         83
+  C:051EH         LINE#         84
+  C:051FH         LINE#         85
+  C:0520H         LINE#         86
+  C:0521H         LINE#         87
+  C:0522H         LINE#         88
+  C:0523H         LINE#         89
+  C:0524H         LINE#         90
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/08/2016  19:59:41  PAGE 4
+
+
+  C:0525H         LINE#         91
+  C:0526H         LINE#         92
+  C:0527H         LINE#         93
+  C:0528H         LINE#         94
+  C:0529H         LINE#         95
+  C:052AH         LINE#         96
+  C:052BH         LINE#         97
+  C:052CH         LINE#         98
+  C:052DH         LINE#         99
+  C:052EH         LINE#         100
+  C:052FH         LINE#         101
+  C:0530H         LINE#         102
+  C:0532H         LINE#         103
+  C:0532H         LINE#         104
+  -------         ENDPROC       ZD3
+  -------         PROC          MAIN
+  C:05A7H         LINE#         107
+  C:05A7H         LINE#         109
+  C:05A7H         LINE#         110
+  C:05AAH         LINE#         111
+  C:05ADH         LINE#         112
+  C:05AFH         LINE#         113
+  C:05B2H         LINE#         114
+  C:05B5H         LINE#         115
+  C:05B7H         LINE#         116
+  C:05B9H         LINE#         117
+  C:05BBH         LINE#         118
+  C:05BDH         LINE#         120
+  C:05BDH         LINE#         121
+  C:05BDH         LINE#         122
+  C:05C0H         LINE#         123
+  C:05C2H         LINE#         124
+  C:05C5H         LINE#         125
+  C:05C7H         LINE#         126
+  C:05CAH         LINE#         127
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        _隹聿_量
+
+  -------         MODULE        ?C?FPMUL
+  C:001EH         PUBLIC        ?C?FPMUL
+  -------         ENDMOD        ?C?FPMUL
+
+  -------         MODULE        ?C?FPDIV
+  C:0127H         PUBLIC        ?C?FPDIV
+  -------         ENDMOD        ?C?FPDIV
+
+  -------         MODULE        ?C?FCAST
+  C:01CEH         PUBLIC        ?C?FCASTC
+  C:01C9H         PUBLIC        ?C?FCASTI
+  C:01C4H         PUBLIC        ?C?FCASTL
+  -------         ENDMOD        ?C?FCAST
+
+  -------         MODULE        ?C?CASTF
+  C:0202H         PUBLIC        ?C?CASTF
+  -------         ENDMOD        ?C?CASTF
+
+  -------         MODULE        ?C?ULDIV
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/08/2016  19:59:41  PAGE 5
+
+
+  C:02BFH         PUBLIC        ?C?ULDIV
+  -------         ENDMOD        ?C?ULDIV
+
+  -------         MODULE        ?C?LNEG
+  C:0351H         PUBLIC        ?C?LNEG
+  -------         ENDMOD        ?C?LNEG
+
+  -------         MODULE        ?C?ULCMP
+  C:035FH         PUBLIC        ?C?ULCMP
+  -------         ENDMOD        ?C?ULCMP
+
+Program Size: data=41.1 xdata=0 code=1466
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

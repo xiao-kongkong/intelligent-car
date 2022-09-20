@@ -1,0 +1,152 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        02/01/2016  17:45:35  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+F:\单片机\清翔电子 QX-MCS51资料盘\5.程序编译软件\C51\BIN\BL51.EXE 001.obj TO 001 RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  001.obj (001)
+  F:\单片机\清翔电子 QX-MCS51资料盘\5.程序编译软件\C51\LIB\C51S.LIB (?C_STARTUP)
+  F:\单片机\清翔电子 QX-MCS51资料盘\5.程序编译软件\C51\LIB\C51S.LIB (?C?CCASE)
+
+
+LINK MAP OF MODULE:  001 (001)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0038H     UNIT         ?PR?KEYPRO?001
+            CODE    003BH     0037H     UNIT         ?PR?KEYSCAN?001
+            CODE    0072H     0026H     UNIT         ?C?LIB_CODE
+            CODE    0098H     001EH     UNIT         ?PR?_DELAY?001
+            CODE    00B6H     000CH     UNIT         ?C_C51STARTUP
+            CODE    00C2H     0005H     UNIT         ?PR?MAIN?001
+
+
+
+OVERLAY MAP OF MODULE:   001 (001)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?001
+
+?PR?MAIN?001
+  +--> ?PR?KEYPRO?001
+
+?PR?KEYPRO?001
+  +--> ?PR?KEYSCAN?001
+
+?PR?KEYSCAN?001
+  +--> ?PR?_DELAY?001
+
+
+
+SYMBOL TABLE OF MODULE:  001 (001)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/01/2016  17:45:35  PAGE 2
+
+
+
+  -------         MODULE        001
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  D:00A8H         PUBLIC        IE
+  C:0098H         PUBLIC        _delay
+  D:00B8H         PUBLIC        IP
+  C:00C2H         PUBLIC        main
+  C:003BH         PUBLIC        KeyScan
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  B:00B0H.2       PUBLIC        led
+  C:0003H         PUBLIC        KeyPro
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        z
+  -------         DO            
+  D:0006H         SYMBOL        x
+  D:0004H         SYMBOL        y
+  -------         ENDDO         
+  C:0098H         LINE#         6
+  C:0098H         LINE#         7
+  C:0098H         LINE#         9
+  C:00A1H         LINE#         10
+  C:00B5H         LINE#         11
+  -------         ENDPROC       _DELAY
+  -------         PROC          KEYSCAN
+  -------         DO            
+  D:0003H         SYMBOL        cord_l
+  D:0002H         SYMBOL        cord_h
+  -------         ENDDO         
+  C:003BH         LINE#         14
+  C:003BH         LINE#         15
+  C:003BH         LINE#         17
+  C:003EH         LINE#         18
+  C:0046H         LINE#         19
+  C:0046H         LINE#         20
+  C:004DH         LINE#         21
+  C:0055H         LINE#         22
+  C:0055H         LINE#         23
+  C:005AH         LINE#         24
+  C:005FH         LINE#         25
+  C:0064H         LINE#         26
+  C:006CH         LINE#         27
+  C:006EH         LINE#         28
+  C:006EH         LINE#         29
+  C:006EH         LINE#         30
+  C:0071H         LINE#         31
+  -------         ENDPROC       KEYSCAN
+  -------         PROC          KEYPRO
+  C:0003H         LINE#         33
+  C:0003H         LINE#         34
+  C:0003H         LINE#         35
+  C:0029H         LINE#         36
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/01/2016  17:45:35  PAGE 3
+
+
+  C:0029H         LINE#         38
+  C:0029H         LINE#         39
+  C:002CH         LINE#         40
+  C:002FH         LINE#         44
+  C:0032H         LINE#         45
+  C:0035H         LINE#         46
+  C:0038H         LINE#         50
+  C:0038H         LINE#         51
+  C:0038H         LINE#         52
+  C:003AH         LINE#         55
+  C:003AH         LINE#         56
+  -------         ENDPROC       KEYPRO
+  -------         PROC          MAIN
+  C:00C2H         LINE#         58
+  C:00C2H         LINE#         59
+  C:00C2H         LINE#         66
+  C:00C2H         LINE#         67
+  C:00C2H         LINE#         69
+  C:00C5H         LINE#         70
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        001
+
+  -------         MODULE        ?C?CCASE
+  C:0072H         PUBLIC        ?C?CCASE
+  -------         ENDMOD        ?C?CCASE
+
+Program Size: data=9.0 xdata=0 code=199
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

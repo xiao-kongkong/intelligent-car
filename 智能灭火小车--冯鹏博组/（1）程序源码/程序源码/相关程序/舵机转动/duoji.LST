@@ -1,0 +1,71 @@
+C51 COMPILER V9.00   DUOJI                                                                 02/04/2016 18:43:13 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE DUOJI
+OBJECT MODULE PLACED IN duoji.OBJ
+COMPILER INVOKED BY: F:\单片机\清翔电子 QX-MCS51资料盘\5.程序编译软件\C51\BIN\C51.EXE duoji.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <stc12c5a.h>
+   2          #include "duoji.h"
+   3          #define uchar unsigned char 
+   4          #define uint unsigned int 
+   5           uchar count;      //0.5ms次数标识
+   6           sbit pwm =P0^1 ;          //PWM信号输出
+   7           sbit jia =P3^0;           //角度增加按键检测IO口
+   8           sbit jan =P3^1;           //角度减少按键检测IO口
+   9          
+  10           unsigned char jd;         //角度标识
+  11           void delay(unsigned int i)//延时
+  12           {
+  13   1                 unsigned int j,k;
+  14   1                 for(j=i;j>0;j--)
+  15   1                   for(k=5500;k>0;k--);
+  16   1       }
+  17           void Time0_Init()          //定时器初始化
+  18           {
+  19   1               TMOD = 0x01;           //定时器0工作在方式1   
+  20   1               IE   = 0x82;
+  21   1               TH0  = 0Xfe;
+  22   1               TL0  = 0X30;     //11.0592MZ晶振，0.5ms
+  23   1           TR0=1;                 //定时器开始
+  24   1       }
+  25           void Time0_Int() interrupt 1 //中断程序
+  26           {
+  27   1               TH0  = 0xfe;             //重新赋值
+  28   1               TL0  = 0x30;
+  29   1           if(count< jd)              //判断0.5ms次数是否小于角度标识
+  30   1             pwm=1;                  //确实小于，PWM输出高电平
+  31   1           else
+  32   1             pwm=0;                  //大于则输出低电平
+  33   1           count=(count+1);          //0.5ms次数加1
+  34   1           count=count%40;     //次数始终保持为40 即保持周期为20ms
+  35   1       }
+  36          
+  37           void douji(uint x,uchar m,uchar n)
+  38           {
+  39   1               Time0_Init(); 
+  40   1      
+  41   1                       jd=m; count=0;
+  42   1                       delay(x);
+  43   1                       jd=n;  count=0;
+  44   1                       delay(x); 
+  45   1              
+  46   1       }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    115    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      2    ----
+   IDATA SIZE       =   ----    ----
+C51 COMPILER V9.00   DUOJI                                                                 02/04/2016 18:43:13 PAGE 2   
+
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

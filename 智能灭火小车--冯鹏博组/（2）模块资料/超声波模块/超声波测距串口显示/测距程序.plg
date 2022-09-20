@@ -1,0 +1,13 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Project:</h2>
+D:\资料\新建文件夹\常用\超声波模块\超声波测距串口显示\测距程序.uvproj
+Project File Date:  <unknown>
+
+<h2>Output:</h2>
+compiling 测距程序.C...
+测距程序.C(99): warning C206: 'delayms': missing function-prototype
+测距程序.C(99): error C267: 'delayms': requires ANSI-style prototype
+测距程序.C - 1 Error(s), 1 Warning(s).

@@ -1,0 +1,181 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\Admin\Desktop\遥控 调试\校赛\nrf舵机超声波最新\nrf 接受(1).uvproj
+Project File Date:  04/09/2016
+
+<h2>Output:</h2>
+compiling car.c...
+CAR.C(94): error C141: syntax error near '}'
+car.c - 1 Error(s), 0 Warning(s).
+compiling car.c...
+car.c - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?NRF_接蔩
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DOUJI2?DUOJI
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?HOUZHUAN?ZHUAN
+Program Size: data=88.1 xdata=0 code=3389
+creating hex file from "nrf 接受"...
+"nrf 接受" - 0 Error(s), 3 Warning(s).
+compiling car.c...
+car.c - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?NRF_接蔩
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DOUJI2?DUOJI
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?HOUZHUAN?ZHUAN
+Program Size: data=88.1 xdata=0 code=3261
+creating hex file from "nrf 接受"...
+"nrf 接受" - 0 Error(s), 3 Warning(s).
+compiling car.c...
+car.c - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?NRF_接蔩
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DOUJI2?DUOJI
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?HOUZHUAN?ZHUAN
+Program Size: data=88.1 xdata=0 code=3264
+creating hex file from "nrf 接受"...
+"nrf 接受" - 0 Error(s), 3 Warning(s).
+compiling car.c...
+car.c - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?NRF_接蔩
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DOUJI2?DUOJI
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?HOUZHUAN?ZHUAN
+Program Size: data=88.1 xdata=0 code=3261
+creating hex file from "nrf 接受"...
+"nrf 接受" - 0 Error(s), 3 Warning(s).
+compiling car.c...
+car.c - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?NRF_接蔩
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DOUJI2?DUOJI
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?HOUZHUAN?ZHUAN
+Program Size: data=88.1 xdata=0 code=3264
+creating hex file from "nrf 接受"...
+"nrf 接受" - 0 Error(s), 3 Warning(s).
+compiling car.c...
+car.c - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?NRF_接蔩
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DOUJI2?DUOJI
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?HOUZHUAN?ZHUAN
+Program Size: data=88.1 xdata=0 code=3264
+creating hex file from "nrf 接受"...
+"nrf 接受" - 0 Error(s), 3 Warning(s).
+compiling car.c...
+car.c - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?NRF_接蔩
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DOUJI2?DUOJI
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?HOUZHUAN?ZHUAN
+Program Size: data=88.1 xdata=0 code=3264
+creating hex file from "nrf 接受"...
+"nrf 接受" - 0 Error(s), 3 Warning(s).
+compiling car.c...
+car.c - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?NRF_接蔩
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DOUJI2?DUOJI
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?HOUZHUAN?ZHUAN
+Program Size: data=88.1 xdata=0 code=3264
+creating hex file from "nrf 接受"...
+"nrf 接受" - 0 Error(s), 3 Warning(s).
+compiling car.c...
+car.c - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?NRF_接蔩
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DOUJI2?DUOJI
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?HOUZHUAN?ZHUAN
+Program Size: data=88.1 xdata=0 code=3264
+creating hex file from "nrf 接受"...
+"nrf 接受" - 0 Error(s), 3 Warning(s).
+compiling car.c...
+car.c - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?NRF_接蔩
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DOUJI2?DUOJI
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?HOUZHUAN?ZHUAN
+Program Size: data=88.1 xdata=0 code=3268
+creating hex file from "nrf 接受"...
+"nrf 接受" - 0 Error(s), 3 Warning(s).
+compiling car.c...
+car.c - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?NRF_接蔩
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DOUJI2?DUOJI
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?HOUZHUAN?ZHUAN
+Program Size: data=88.1 xdata=0 code=3268
+creating hex file from "nrf 接受"...
+"nrf 接受" - 0 Error(s), 3 Warning(s).
+compiling car.c...
+car.c - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?NRF_接蔩
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DOUJI2?DUOJI
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?HOUZHUAN?ZHUAN
+Program Size: data=88.1 xdata=0 code=3261
+creating hex file from "nrf 接受"...
+"nrf 接受" - 0 Error(s), 3 Warning(s).
+compiling car.c...
+car.c - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?NRF_接蔩
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DOUJI2?DUOJI
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?HOUZHUAN?ZHUAN
+Program Size: data=88.1 xdata=0 code=3264
+creating hex file from "nrf 接受"...
+"nrf 接受" - 0 Error(s), 3 Warning(s).

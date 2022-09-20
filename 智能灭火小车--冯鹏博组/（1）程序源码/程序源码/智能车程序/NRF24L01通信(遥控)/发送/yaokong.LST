@@ -1,0 +1,81 @@
+C51 COMPILER V9.00   YAOKONG                                                               02/10/2016 13:25:51 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE YAOKONG
+OBJECT MODULE PLACED IN yaokong.OBJ
+COMPILER INVOKED BY: F:\单片机\清翔电子 QX-MCS51资料盘\5.程序编译软件\C51\BIN\C51.EXE yaokong.c BROWSE DEBUG OBJECTEXTEN
+                    -D
+
+line level    source
+
+   1          #include<stc12c5a.h>
+   2          #include<1602ADC.h>
+   3          #include<nrf.h>
+   4          #define uchar unsigned char
+   5          #define uint unsigned int
+   6          
+   7          
+   8          uchar TxDate[5] ;
+   9          
+  10          //unsigned char *TxDate;
+  11          
+  12          void main ()
+  13          {        
+  14   1              SPI_Init('H');
+  15   1          NRF24L01Int();
+  16   1          NRFSetTxMode();
+  17   1          Ddelay(10);
+  18   1      
+  19   1              IE = 0xa0;              //中断总开关            
+  20   1              lcdinit();
+  21   1              while (1)
+  22   1              {                       
+  23   2                      shuzi ();
+  24   2                      xianshi ();
+  25   2                      deng ();
+  26   2                      delay1(20);
+  27   2      
+  28   2      //       *TxData=bnum;
+  29   2               NRF_Send(TxDate);
+  30   2      
+  31   2           while(CheckACK()); //检测是否发送
+  32   2              }
+  33   1      }
+  34          
+  35          void adc_isr() interrupt 5 using 1
+  36          {       uchar ch;
+  37   1          
+  38   1          ADC_CONTR &= !ADC_FLAG;                  
+  39   1                if (ch == 0)
+  40   1                {
+  41   2                *TxDate=ADC_RES;
+  42   2                xnum = *TxDate;
+  43   2                }
+  44   1                if(ch == 1)
+  45   1                {
+  46   2                      *(TxDate+1)=ADC_RES;
+  47   2                      ynum = *(TxDate+1);
+  48   2                }
+  49   1                if (++ch>1)
+  50   1                { 
+  51   2                       ch = 0;
+  52   2                      *(TxDate+2) = KeyScan();
+  53   2                }
+  54   1              ADC_CONTR = ADC_POWER | ADC_SPEEDLL | ADC_START | ch;
+C51 COMPILER V9.00   YAOKONG                                                               02/10/2016 13:25:51 PAGE 2   
+
+  55   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    128    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      5       1
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

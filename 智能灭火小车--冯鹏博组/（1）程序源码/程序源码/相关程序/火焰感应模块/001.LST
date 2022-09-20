@@ -1,0 +1,141 @@
+C51 COMPILER V9.00   001                                                                   04/12/2016 16:57:28 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE 001
+OBJECT MODULE PLACED IN 001.OBJ
+COMPILER INVOKED BY: F:\单片机\清翔电子 QX-MCS51资料盘\5.程序编译软件\C51\BIN\C51.EXE 001.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <stc12c5a.h>
+   2          #define uchar unsigned char
+   3          #define uint unsigned int
+   4          sbit rig = P0^1;
+   5          sbit lif = P0^2;
+   6          sbit rig0 = P0^3;
+   7          sbit lif0 = P0^4;
+   8          sbit flame1 = P3^5;  //火焰感应 zuo
+   9          sbit flame2 = P3^6;      //             zhong
+  10          sbit flame3 = P3^7;      //                     you
+  11          sbit bee = P2^3;
+  12          
+  13          
+  14          void delayms (uint i)
+  15          {       uint j,k;
+  16   1              for (j = 0; j<i; j++)
+  17   1                      for (k = 0; k<120;k++);
+  18   1              
+  19   1      }
+  20          void pwm (uchar x, uchar y)                               //越小越快  PCA模拟PWM
+  21          {
+  22   1              CCON = 0;                       //Initial PCA control register
+  23   1                                         
+  24   1                                         
+  25   1          CL = 0;                         //Reset PCA base timer
+  26   1          CH = 0;
+  27   1          CMOD = 0x02;                    //Set PCA timer clock source as Fosc/2
+  28   1                                          //Disable PCA timer overflow interrupt
+  29   1          CCAP0H = CCAP0L = x;         //PWM0 port output 50% duty cycle square wave
+  30   1          CCAPM0 = 0x42;                  //PCA module-0 work in 8-bit PWM mode and no PCA interrupt
+  31   1      
+  32   1          CCAP1H = CCAP1L = y;         //PWM1 port output 0% duty cycle square wave
+  33   1      //    PCA_PWM1 = 0x03;
+  34   1          CCAPM1 = 0x42;                  //PCA module-1 work in 8-bit PWM mode and no PCA interrupt
+  35   1      
+  36   1          CR = 1;                         //PCA timer start run
+  37   1      }
+  38          
+  39          void qian()
+  40          {
+  41   1              rig=0;
+  42   1              lif=1;
+  43   1              rig0=0;
+  44   1              lif0=1;
+  45   1              delayms(1);
+  46   1              pwm(98,98);
+  47   1      }
+  48          void zuozuo()
+  49          {
+  50   1              rig=1;
+  51   1              lif=0;
+  52   1              rig0=0;
+  53   1              lif0=1;
+  54   1              delayms(1);
+  55   1              pwm(75,75);
+C51 COMPILER V9.00   001                                                                   04/12/2016 16:57:28 PAGE 2   
+
+  56   1              if(flame1==1) pwm (87,87);
+  57   1      }
+  58          void youyou()
+  59          {
+  60   1              rig=0;
+  61   1              lif=1;
+  62   1              rig0=1;
+  63   1              lif0=0;
+  64   1              delayms(1);
+  65   1              pwm(75,75);
+  66   1              if(flame3==1) pwm (87,87);
+  67   1      }
+  68          void ting()
+  69          {
+  70   1              rig=1;            
+  71   1              lif=1;
+  72   1              rig0=1;
+  73   1              lif0=1;           //ting
+  74   1              delayms(5000);
+  75   1              rig=1;
+  76   1              lif=0;
+  77   1              rig0=1;          
+  78   1              lif0=0;
+  79   1              delayms(1);      //houtui
+  80   1              pwm(98,98);
+  81   1              delayms(4500);
+  82   1              rig=1;
+  83   1              lif=0;
+  84   1              rig0=0;
+  85   1              lif0=1;                 
+  86   1              delayms(1);        //houzhuan
+  87   1              pwm(50,56);
+  88   1              delayms(7050);
+  89   1      
+  90   1              rig=1;             //ting
+  91   1              lif=1;
+  92   1              rig0=1;
+  93   1              lif0=1;
+  94   1              bee = 1;
+  95   1              delayms(10000);
+  96   1              bee = 0;
+  97   1      
+  98   1      }
+  99          
+ 100          
+ 101          void main ()
+ 102          {       
+ 103   1              bee = 0;
+ 104   1              while (1)
+ 105   1              {
+ 106   2                if (flame1==0&&flame2==0&&flame3==0)     ting();
+ 107   2                if (flame1==0&&flame3==0)                                     ting();
+ 108   2                if(flame1==1&&flame2==0&&flame3==1)      qian();
+ 109   2                if(flame1==0&&flame2==1&&flame3==1)     zuozuo();
+ 110   2                if(flame1==1&&flame2==1&&flame3==0)     youyou();
+ 111   2      
+ 112   2      //        ting();
+ 113   2              }
+ 114   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+C51 COMPILER V9.00   001                                                                   04/12/2016 16:57:28 PAGE 3   
+
+   CODE SIZE        =    275    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

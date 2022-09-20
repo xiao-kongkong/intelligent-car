@@ -1,0 +1,108 @@
+C51 COMPILER V9.00   PWM_调试                                                              02/07/2016 14:32:28 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE PWM_调试
+OBJECT MODULE PLACED IN PWM 调试.OBJ
+COMPILER INVOKED BY: F:\单片机\清翔电子 QX-MCS51资料盘\5.程序编译软件\C51\BIN\C51.EXE PWM 调试.c BROWSE DEBUG OBJECTEXTE
+                    -ND
+
+line level    source
+
+   1          #include<stc12c5a.h>
+   2          
+   3          #define uchar unsigned char
+   4          #define uint unsigned int
+   5          sbit rig = P0^1;
+   6          sbit lif = P0^2;
+   7          sbit rig0 = P0^3;
+   8          sbit lif0 = P0^4;
+   9          unsigned long num1;
+  10          
+  11          void pwm (uchar x, uchar y)                               //越小越快  PCA模拟PWM
+  12          {
+  13   1              CCON = 0;                       //Initial PCA control register
+  14   1                                         
+  15   1                                         
+  16   1          CL = 0;                         //Reset PCA base timer
+  17   1          CH = 0;
+  18   1          CMOD = 0x02;                    //Set PCA timer clock source as Fosc/2
+  19   1                                          //Disable PCA timer overflow interrupt
+  20   1          CCAP0H = CCAP0L = x;         //PWM0 port output 50% duty cycle square wave
+  21   1          CCAPM0 = 0x42;                  //PCA module-0 work in 8-bit PWM mode and no PCA interrupt
+  22   1      
+  23   1          CCAP1H = CCAP1L = y;         //PWM1 port output 0% duty cycle square wave
+  24   1      //    PCA_PWM1 = 0x03;
+  25   1          CCAPM1 = 0x42;                  //PCA module-1 work in 8-bit PWM mode and no PCA interrupt
+  26   1      
+  27   1          CR = 1;                         //PCA timer start run
+  28   1      }
+  29          
+  30          void delayms (uint i)
+  31          {       uint j,k;
+  32   1              for (j = 0; j<i; j++)
+  33   1                      for (k = 0; k<120;k++);
+  34   1              
+  35   1      }
+  36          
+  37          void main ()
+  38          {        while(1)
+  39   1                {
+  40   2      //                      rig=0;
+  41   2      //                      lif=1;
+  42   2      //                      rig0=1;
+  43   2      //                      lif0=0;                 
+  44   2      //                      delayms(1);
+  45   2      //                      pwm(56,50);
+  46   2      //                      delayms(3200);             //右转75度
+  47   2      //
+  48   2      //                      rig=1;
+  49   2      //                      lif=1;
+  50   2      //                      rig0=1;
+  51   2      //                      lif0=1;                 
+  52   2      //                      delayms(1);
+  53   2      //                      pwm(56,50);
+  54   2      //                      delayms(6000);
+C51 COMPILER V9.00   PWM_调试                                                              02/07/2016 14:32:28 PAGE 2   
+
+  55   2      //
+  56   2      //                      rig=1;
+  57   2      //                      lif=0;
+  58   2      //                      rig0=0;
+  59   2      //                      lif0=1;                 
+  60   2      //                      delayms(1);
+  61   2      //                      pwm(56,50);
+  62   2      //                      delayms(3200);             //左转75度
+  63   2      
+  64   2                              rig=1;
+  65   2                              lif=0;
+  66   2                              rig0=0;
+  67   2                              lif0=1;                 
+  68   2                              delayms(1);
+  69   2                              pwm(42,40);
+  70   2                              delayms(4120);
+  71   2                              
+  72   2                              rig=1;
+  73   2                              lif=1;
+  74   2                              rig0=1;
+  75   2                              lif0=1;                 
+  76   2                              delayms(1);
+  77   2                              pwm(56,50);
+  78   2                              delayms(6000);
+  79   2                      
+  80   2                      
+  81   2                 }
+  82   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    115    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      4    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

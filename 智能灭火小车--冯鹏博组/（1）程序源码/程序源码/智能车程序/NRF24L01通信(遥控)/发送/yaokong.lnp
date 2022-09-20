@@ -1,0 +1,5 @@
+"yaokong.obj",
+"nrf.obj",
+"1602ADC.obj" 
+TO "yaokong" 
+RAMSIZE(256) 

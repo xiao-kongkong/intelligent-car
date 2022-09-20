@@ -1,0 +1,117 @@
+C51 COMPILER V9.00   NRF_接蔩                                                              04/14/2016 19:02:54 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE NRF_接蔩
+OBJECT MODULE PLACED IN nrf 接受.OBJ
+COMPILER INVOKED BY: F:\单片机\清翔电子 QX-MCS51资料盘\5.程序编译软件\C51\BIN\C51.EXE nrf 接受.c BROWSE DEBUG OBJECTEXTE
+                    -ND
+
+line level    source
+
+   1          #include<stc12c5a.h>
+   2          #include"nrf24l01receive.h"
+   3          #include"car.h"
+   4          #include "duoji.h"
+   5          #include <shengbo.h>
+   6          #include <zhuan.h>
+   7          
+   8          //sbit bee = P2^3;
+   9          bit    flag = 0 ;
+  10          sbit yinxiang = P2^0;
+  11          #define uchar unsigned char 
+  12          #define uint unsigned int
+  13          unsigned long num,num2;
+  14          
+  15          unsigned char RxDate[5] ;
+  16          
+  17          void main()
+  18          {  uchar k;
+  19   1         SPI_Init('L'); 
+  20   1         NRF24L01Int();
+  21   1         SPI_Init('H');
+  22   1         NRFSetRXMode();//设置为接收模式 
+  23   1         TMOD=0x11;              //设T0 T1为方式1，GATE=1；  mode1 16位内部计时器
+  24   1              TH0=0;
+  25   1              TL0=0;          
+  26   1              TH1=0xf8;                  //2MS定时
+  27   1              TL1=0x30;
+  28   1              ET0=1;             //允许T0中断
+  29   1              ET1=1;                     //允许T1中断
+  30   1              TR1=1;                     //开启定时器
+  31   1              EA=1;                      //开启总中断
+  32   1      
+  33   1              feng = 0;
+  34   1         while(1)
+  35   1         {
+  36   2                 
+  37   2                  GetDate();     //开始接受数据               // RevTempDate[0]
+  38   2                      num2=(RevTempDate[1]);          //y轴
+  39   2                      num = (RevTempDate[0]);         //num控制左右x
+  40   2                      car(num,num2);
+  41   2      
+  42   2              switch(RevTempDate[2] )           //按键
+  43   2              {
+  44   3                      //第一行键值码   //1是灭 0是亮            //行*列
+  45   3                      case 0xee:      feng = 1;                       break;     //1*1
+  46   3                      case 0xde: m = 0; k = 1;                break;     //1*2
+  47   3                      case 0xbe:      k = 0;  break;     //1*3
+  48   3                                                        
+  49   3                      
+  50   3                      //第二行键值码
+  51   3                      case 0xed:      yinxiang = 1;  ;                break;    //2*1
+  52   3                      case 0xdd:              break;    //2*2
+  53   3                      case 0xbd:   ;          break;    //2*3
+  54   3      
+C51 COMPILER V9.00   NRF_接蔩                                                              04/14/2016 19:02:54 PAGE 2   
+
+  55   3      
+  56   3                      //第三行键值码
+  57   3                      case 0xeb: m = 1; douji1(130,2);                break;     //3*1
+  58   3                      case 0xdb: m = 1;feng = 0; yinxiang = 0;douji1(130,3) ;         break;     //3*2
+  59   3                      case 0xbb: m = 1;douji1(130,4) ;                break;     //3*3
+  60   3              }
+  61   2              if (k==1) {chao ();move ();}     
+  62   2      }        
+  63   1      }
+  64                                                                                                                                                              
+             -                    
+  65           /********************************************************/
+  66               void zd0() interrupt 1              //T0中断用来计数器溢出,超过测距范围
+  67            {
+  68   1          flag=1;                                                      //中断溢出标志
+  69   1        }
+  70          /********************************************************/
+  71             void  zd3 () interrupt 3              //T1中断用来扫描数码管和计800MS启动模块
+  72            {
+  73   1               if (m == 0)
+  74   1               {TH1=0xf8;
+  75   2               TL1=0x30;
+  76   2               zhongduan(); }
+  77   1              
+  78   1               else 
+  79   1               {
+  80   2               TH1  = 0xfe;             //重新赋值
+  81   2               TL1  = 0x30;
+  82   2           if(count< jd)              //判断0.5ms次数是否小于角度标识
+  83   2             pwm0=1;                  //确实小于，PWM输出高电平
+  84   2           else
+  85   2             pwm0=0;                  //大于则输出低电平
+  86   2           count=(count+1);          //0.5ms次数加1
+  87   2           count=count%40;     //次数始终保持为40 即保持周期为20ms
+  88   2               }
+  89   1      
+  90   1        } 
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    622    ----
+   CONSTANT SIZE    =      5    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     47      11
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =      1    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
